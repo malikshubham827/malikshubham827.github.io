@@ -1,0 +1,241 @@
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 3vw;
+  color: #a7ad39;
+}
+
+/*---- Background video---- */
+.background-wrap {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  overflow: hidden;
+  z-index: -10;
+}
+
+#video-bg-elem {
+  positon: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100;
+}
+
+/* 1.No object-fit support */
+@media (min-aspect-ratio: 16/9) {
+  .background-wrap > video {
+	height: 300%;
+	top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .background-wrap > video {
+	width: 300%;
+	left: -100%;
+  }
+}
+
+/* 2. Object-fit support available*/
+@supports (object-fit: cover) {
+  .background-wrap > video {
+	top:0; left: 0;
+	width: 100%; 
+	height: 100%;
+	object-fit: cover;
+  }
+}
+
+
+/*--- main code here for the anatomy of the website( works hope so )--- */
+
+/* some tit-bits just for ice-breaking( pun intended ) */
+
+h1 {
+  font-size: 6vw;
+}
+.signing-off-note {
+  font-size: 2vw;
+}
+#cv {
+  font-size: 3vw;
+}
+
+img {
+  height: 50vh;
+  border-radius:50%;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+i {
+	padding: 2vw;
+}
+
+#info {
+  letter-spacing: 1.1px;
+  padding: 0;
+  display: inline;
+}
+
+/* social icons */
+.fa-github {
+  color: #4078c0;	
+  opacity: 0.7; 
+}
+
+.fa-facebook {
+  color: #3b5998;
+  opacity: 0.7;
+}
+
+.fa-twitter {
+  color: #55acee;
+  opacity: 0.7;
+}
+.fa-linkedin {
+  color: #007bb6;
+  opacity: 0.7;
+}
+
+.fa-quora {
+  color: #af2424;
+  opacity: 0.7;
+}
+
+/* Artificial glow up on hover */
+.fa-github:hover {
+  opacity: 1.2;
+}
+
+.fa-facebook:hover {
+  opacity: 1.8;
+}
+
+.fa-twitter:hover {
+  opacity: 1.2;
+}
+
+.fa-linkedin:hover {
+  opacity: 1.2;
+}
+
+.fa-quora:hover {
+  opacity : 1.2;
+}
+
+/* flexbox */
+.container {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.photo-wrapper {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social ul {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.signing-off-note {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+.photo-wrapper {
+  flex: 1 1 auto;
+  margin: 0;
+  width: 30vw;
+}
+
+.text-wrapper {
+  flex: 2 1 100%;
+  margin:0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.fa-heart {
+  color: red;
+}
+
+/* Responsive design(intend to be) */
+@media (max-width: 1010px) {
+  .container {
+	flex-direction: column;
+	justify-content: center;
+  }
+  img {
+	height:30vh;
+  }
+
+  .photo-wrapper{
+	display: flex;
+	justify-content: center;
+	width: 100vw;
+  }
+  body {
+	font-size: 4vw;
+  }
+  h1 {
+	font-size: 8vw;
+  }
+  .signing-off-note {
+	font-size: 4vw;
+	justify-content: center;
+	}
+  #cv {
+	font-size: 4vw;
+  }
+
+  .social ul {
+	  justify-content: center;
+	}
+
+	.bg-icon {
+		font-size: 6vh;
+	}
+}
+
+/* Following is for typed.js dynamic typing cursor*/
+.typed-cursor{
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+@keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+@-moz-keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
